@@ -1,0 +1,84 @@
+{
+  "validacion_cruzada_5": {
+    "arbol_decision": {
+      "exactitud": {
+        "media": 0.985,
+        "desv": 0.0021,
+        "min": 0.9824,
+        "max": 0.9887
+      },
+      "f1": {
+        "media": 0.985,
+        "desv": 0.0021,
+        "min": 0.9824,
+        "max": 0.9887
+      }
+    },
+    "regresion_logistica": {
+      "exactitud": {
+        "media": 0.9846,
+        "desv": 0.0017,
+        "min": 0.9824,
+        "max": 0.9874
+      },
+      "f1": {
+        "media": 0.9846,
+        "desv": 0.0017,
+        "min": 0.9824,
+        "max": 0.9874
+      }
+    },
+    "isolation_forest": {
+      "recall": {
+        "media": 0.9117,
+        "desv": 0.0286,
+        "min": 0.8608,
+        "max": 0.9404
+      },
+      "tasa_falsos_positivos": {
+        "media": 0.0116,
+        "desv": 0.0017,
+        "min": 0.0084,
+        "max": 0.0132
+      }
+    }
+  },
+  "analisis_errores_arbol": {
+    "eventos_prueba": 1192,
+    "errores": 28,
+    "eventos_con_ruido": 28,
+    "errores_en_eventos_con_ruido": 28,
+    "errores_en_eventos_limpios": 0,
+    "exactitud_eventos_limpios": 1.0,
+    "errores_por_rol": {
+      "medico": 18,
+      "enfermeria": 10
+    }
+  },
+  "lineas_base": {
+    "sin_control": {
+      "exactitud_eventos_normales": 0.5087,
+      "autorizacion_legitimos": 1.0,
+      "rechazo_no_autorizados": 0.0,
+      "anomalias_autorizadas": 100,
+      "anomalias_detectadas": 0
+    },
+    "rbac_estatico": {
+      "exactitud_eventos_normales": 0.7652,
+      "autorizacion_legitimos": 1.0,
+      "rechazo_no_autorizados": 0.52,
+      "anomalias_autorizadas": 47,
+      "anomalias_detectadas": 0
+    },
+    "agente_ia": {
+      "exactitud_eventos_normales": 1.0,
+      "autorizacion_legitimos": 1.0,
+      "rechazo_no_autorizados": 1.0,
+      "anomalias_autorizadas": 1,
+      "anomalias_detectadas": 87
+    },
+    "n_normales": 230,
+    "n_anomalias": 100,
+    "anomalias_detenidas_agente": 99
+  }
+}

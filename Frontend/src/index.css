@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* Sin scroll horizontal */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Inputs sin spin en number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,7 @@
+export const Sanciones = () => {
+    return (
+        <div className="min-h-screen flex items-center justify-center">
+            <h1 className="text-3xl font-bold text-blue-deep">Admin - Sanciones (placeholder)</h1>
+        </div>
+    );
+};

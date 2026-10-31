@@ -1,0 +1,448 @@
+{
+  "particion": {
+    "entrenamiento": 5558,
+    "validacion": 1191,
+    "prueba": 1192
+  },
+  "distribucion_clases": {
+    "REQUIERE_APROBACION": 2719,
+    "RECHAZAR": 2637,
+    "AUTORIZAR": 2585
+  },
+  "tasa_anomalias": 0.1,
+  "arbol_decision": {
+    "entrenamiento": {
+      "exactitud": 0.9863,
+      "precision_macro": 0.9864,
+      "recall_macro": 0.9863,
+      "f1_macro": 0.9863,
+      "por_clase": {
+        "RECHAZAR": {
+          "precision": 0.9738387613454351,
+          "recall": 0.9880823401950163,
+          "f1-score": 0.9809088464641033,
+          "support": 1846.0
+        },
+        "AUTORIZAR": {
+          "precision": 0.9916387959866221,
+          "recall": 0.9834162520729685,
+          "f1-score": 0.9875104079933389,
+          "support": 1809.0
+        },
+        "REQUIERE_APROBACION": {
+          "precision": 0.9936541512427287,
+          "recall": 0.9873883342091434,
+          "f1-score": 0.9905113336847654,
+          "support": 1903.0
+        },
+        "accuracy": 0.9863260165527168,
+        "macro avg": {
+          "precision": 0.9863772361915953,
+          "recall": 0.9862956421590429,
+          "f1-score": 0.9863101960474024,
+          "support": 5558.0
+        },
+        "weighted avg": {
+          "precision": 0.9864168379270215,
+          "recall": 0.9863260165527168,
+          "f1-score": 0.9863452908662816,
+          "support": 5558.0
+        }
+      },
+      "matriz_confusion": [
+        [
+          1824,
+          13,
+          9
+        ],
+        [
+          27,
+          1779,
+          3
+        ],
+        [
+          22,
+          2,
+          1879
+        ]
+      ]
+    },
+    "validacion": {
+      "exactitud": 0.9874,
+      "precision_macro": 0.9875,
+      "recall_macro": 0.9874,
+      "f1_macro": 0.9874,
+      "por_clase": {
+        "RECHAZAR": {
+          "precision": 0.9798994974874372,
+          "recall": 0.9873417721518988,
+          "f1-score": 0.9836065573770492,
+          "support": 395.0
+        },
+        "AUTORIZAR": {
+          "precision": 0.9948051948051948,
+          "recall": 0.9871134020618557,
+          "f1-score": 0.9909443725743855,
+          "support": 388.0
+        },
+        "REQUIERE_APROBACION": {
+          "precision": 0.9877450980392157,
+          "recall": 0.9877450980392157,
+          "f1-score": 0.9877450980392157,
+          "support": 408.0
+        },
+        "accuracy": 0.9874055415617129,
+        "macro avg": {
+          "precision": 0.9874832634439493,
+          "recall": 0.98740009075099,
+          "f1-score": 0.9874320093302168,
+          "support": 1191.0
+        },
+        "weighted avg": {
+          "precision": 0.9874430873987853,
+          "recall": 0.9874055415617129,
+          "f1-score": 0.987414783142566,
+          "support": 1191.0
+        }
+      },
+      "matriz_confusion": [
+        [
+          390,
+          1,
+          4
+        ],
+        [
+          4,
+          383,
+          1
+        ],
+        [
+          4,
+          1,
+          403
+        ]
+      ]
+    },
+    "prueba": {
+      "exactitud": 0.9765,
+      "precision_macro": 0.9769,
+      "recall_macro": 0.9765,
+      "f1_macro": 0.9765,
+      "por_clase": {
+        "RECHAZAR": {
+          "precision": 0.9559902200488998,
+          "recall": 0.9873737373737373,
+          "f1-score": 0.9714285714285714,
+          "support": 396.0
+        },
+        "AUTORIZAR": {
+          "precision": 0.9920634920634921,
+          "recall": 0.9664948453608248,
+          "f1-score": 0.97911227154047,
+          "support": 388.0
+        },
+        "REQUIERE_APROBACION": {
+          "precision": 0.9827160493827161,
+          "recall": 0.9754901960784313,
+          "f1-score": 0.9790897908979089,
+          "support": 408.0
+        },
+        "accuracy": 0.9765100671140939,
+        "macro avg": {
+          "precision": 0.9769232538317026,
+          "recall": 0.9764529262709978,
+          "f1-score": 0.9765435446223169,
+          "support": 1192.0
+        },
+        "weighted avg": {
+          "precision": 0.9768799582283116,
+          "recall": 0.9765100671140939,
+          "f1-score": 0.9765519381961102,
+          "support": 1192.0
+        }
+      },
+      "matriz_confusion": [
+        [
+          391,
+          2,
+          3
+        ],
+        [
+          9,
+          375,
+          4
+        ],
+        [
+          9,
+          1,
+          398
+        ]
+      ]
+    },
+    "curva_validacion_max_depth": [
+      {
+        "max_depth": 2,
+        "f1_entrenamiento": 0.6459,
+        "f1_validacion": 0.6453
+      },
+      {
+        "max_depth": 3,
+        "f1_entrenamiento": 0.7167,
+        "f1_validacion": 0.7155
+      },
+      {
+        "max_depth": 4,
+        "f1_entrenamiento": 0.8168,
+        "f1_validacion": 0.8091
+      },
+      {
+        "max_depth": 5,
+        "f1_entrenamiento": 0.9342,
+        "f1_validacion": 0.9386
+      },
+      {
+        "max_depth": 6,
+        "f1_entrenamiento": 0.9838,
+        "f1_validacion": 0.9841
+      },
+      {
+        "max_depth": 7,
+        "f1_entrenamiento": 0.9863,
+        "f1_validacion": 0.9874
+      },
+      {
+        "max_depth": 8,
+        "f1_entrenamiento": 0.9863,
+        "f1_validacion": 0.9874
+      },
+      {
+        "max_depth": 10,
+        "f1_entrenamiento": 0.9863,
+        "f1_validacion": 0.9874
+      }
+    ],
+    "profundidad_real": 7,
+    "hojas": 32,
+    "importancia_atributos": {
+      "rel_medico_tratante": 0.2013,
+      "rol_administrador": 0.1634,
+      "rol_administrativo": 0.1524,
+      "autorizacion_excepcional": 0.1464,
+      "rel_personal_apoyo": 0.1292,
+      "fuera_horario": 0.1062,
+      "doc_historia_clinica": 0.1002,
+      "hora_num": 0.001,
+      "rol_enfermeria": 0.0,
+      "doc_orden_medica": 0.0,
+      "rol_medico": 0.0
+    }
+  },
+  "regresion_logistica": {
+    "entrenamiento": {
+      "exactitud": 0.9863,
+      "precision_macro": 0.9864,
+      "recall_macro": 0.9863,
+      "f1_macro": 0.9863,
+      "por_clase": {
+        "RECHAZAR": {
+          "precision": 0.9738387613454351,
+          "recall": 0.9880823401950163,
+          "f1-score": 0.9809088464641033,
+          "support": 1846.0
+        },
+        "AUTORIZAR": {
+          "precision": 0.9916387959866221,
+          "recall": 0.9834162520729685,
+          "f1-score": 0.9875104079933389,
+          "support": 1809.0
+        },
+        "REQUIERE_APROBACION": {
+          "precision": 0.9936541512427287,
+          "recall": 0.9873883342091434,
+          "f1-score": 0.9905113336847654,
+          "support": 1903.0
+        },
+        "accuracy": 0.9863260165527168,
+        "macro avg": {
+          "precision": 0.9863772361915953,
+          "recall": 0.9862956421590429,
+          "f1-score": 0.9863101960474024,
+          "support": 5558.0
+        },
+        "weighted avg": {
+          "precision": 0.9864168379270215,
+          "recall": 0.9863260165527168,
+          "f1-score": 0.9863452908662816,
+          "support": 5558.0
+        }
+      },
+      "matriz_confusion": [
+        [
+          1824,
+          13,
+          9
+        ],
+        [
+          27,
+          1779,
+          3
+        ],
+        [
+          22,
+          2,
+          1879
+        ]
+      ]
+    },
+    "validacion": {
+      "exactitud": 0.9874,
+      "precision_macro": 0.9875,
+      "recall_macro": 0.9874,
+      "f1_macro": 0.9874,
+      "por_clase": {
+        "RECHAZAR": {
+          "precision": 0.9798994974874372,
+          "recall": 0.9873417721518988,
+          "f1-score": 0.9836065573770492,
+          "support": 395.0
+        },
+        "AUTORIZAR": {
+          "precision": 0.9948051948051948,
+          "recall": 0.9871134020618557,
+          "f1-score": 0.9909443725743855,
+          "support": 388.0
+        },
+        "REQUIERE_APROBACION": {
+          "precision": 0.9877450980392157,
+          "recall": 0.9877450980392157,
+          "f1-score": 0.9877450980392157,
+          "support": 408.0
+        },
+        "accuracy": 0.9874055415617129,
+        "macro avg": {
+          "precision": 0.9874832634439493,
+          "recall": 0.98740009075099,
+          "f1-score": 0.9874320093302168,
+          "support": 1191.0
+        },
+        "weighted avg": {
+          "precision": 0.9874430873987853,
+          "recall": 0.9874055415617129,
+          "f1-score": 0.987414783142566,
+          "support": 1191.0
+        }
+      },
+      "matriz_confusion": [
+        [
+          390,
+          1,
+          4
+        ],
+        [
+          4,
+          383,
+          1
+        ],
+        [
+          4,
+          1,
+          403
+        ]
+      ]
+    },
+    "prueba": {
+      "exactitud": 0.9765,
+      "precision_macro": 0.9769,
+      "recall_macro": 0.9765,
+      "f1_macro": 0.9765,
+      "por_clase": {
+        "RECHAZAR": {
+          "precision": 0.9559902200488998,
+          "recall": 0.9873737373737373,
+          "f1-score": 0.9714285714285714,
+          "support": 396.0
+        },
+        "AUTORIZAR": {
+          "precision": 0.9920634920634921,
+          "recall": 0.9664948453608248,
+          "f1-score": 0.97911227154047,
+          "support": 388.0
+        },
+        "REQUIERE_APROBACION": {
+          "precision": 0.9827160493827161,
+          "recall": 0.9754901960784313,
+          "f1-score": 0.9790897908979089,
+          "support": 408.0
+        },
+        "accuracy": 0.9765100671140939,
+        "macro avg": {
+          "precision": 0.9769232538317026,
+          "recall": 0.9764529262709978,
+          "f1-score": 0.9765435446223169,
+          "support": 1192.0
+        },
+        "weighted avg": {
+          "precision": 0.9768799582283116,
+          "recall": 0.9765100671140939,
+          "f1-score": 0.9765519381961102,
+          "support": 1192.0
+        }
+      },
+      "matriz_confusion": [
+        [
+          391,
+          2,
+          3
+        ],
+        [
+          9,
+          375,
+          4
+        ],
+        [
+          9,
+          1,
+          398
+        ]
+      ],
+      "roc_auc_ovr": 0.9923
+    },
+    "coeficientes_autorizar": {
+      "rol_medico": 3.095,
+      "rol_enfermeria": 2.9088,
+      "rol_administrativo": -4.9791,
+      "rol_administrador": -1.1079,
+      "rel_medico_tratante": 4.371,
+      "rel_personal_apoyo": -1.1691,
+      "rel_sin_relacion": -3.285,
+      "autorizacion_excepcional": 6.7482,
+      "doc_historia_clinica": -1.9051,
+      "doc_resultado_laboratorio": 0.8552,
+      "doc_orden_medica": 0.9667,
+      "hora_num": -0.007,
+      "fuera_horario": -4.1725,
+      "frecuencia_std": -0.0652
+    }
+  },
+  "isolation_forest": {
+    "prueba": {
+      "recall_deteccion": 0.906,
+      "precision": 0.9217,
+      "f1": 0.9138,
+      "tasa_falsos_positivos": 0.0084,
+      "roc_auc": 0.9946,
+      "matriz_confusion": [
+        [
+          1066,
+          9
+        ],
+        [
+          11,
+          106
+        ]
+      ]
+    },
+    "umbral_modelo_s": 0.5586
+  },
+  "tiempo_entrenamiento_s": 1.24
+}

@@ -1,0 +1,103 @@
+{
+  "escenarios": 330,
+  "criterios": [
+    {
+      "criterio": "Autorización correcta de accesos legítimos",
+      "meta": "≥ 95 %",
+      "resultado": "100.0 %",
+      "n": 100,
+      "cumple": true
+    },
+    {
+      "criterio": "Rechazo de accesos no autorizados",
+      "meta": "≥ 95 %",
+      "resultado": "100.0 %",
+      "n": 100,
+      "cumple": true
+    },
+    {
+      "criterio": "Detección de accesos anómalos (recall)",
+      "meta": "≥ 90 %",
+      "resultado": "87.0 %",
+      "n": 100,
+      "cumple": false
+    },
+    {
+      "criterio": "Control de roles diferenciados",
+      "meta": "100 %",
+      "resultado": "100.0 %",
+      "n": 20,
+      "cumple": true
+    },
+    {
+      "criterio": "Manejo de casos excepcionales",
+      "meta": "100 %",
+      "resultado": "100.0 %",
+      "n": 10,
+      "cumple": true
+    },
+    {
+      "criterio": "Tiempo de respuesta (máximo)",
+      "meta": "< 500 ms",
+      "resultado": "15.7 ms (promedio 10.8 ms)",
+      "n": 330,
+      "cumple": true
+    },
+    {
+      "criterio": "Completitud de la auditoría",
+      "meta": "100 %",
+      "resultado": "100.0 %",
+      "n": 330,
+      "cumple": true
+    },
+    {
+      "criterio": "Interpretación del lenguaje natural",
+      "meta": "≥ 90 %",
+      "resultado": "100.0 %",
+      "n": 40,
+      "cumple": true
+    }
+  ],
+  "exactitud_agente_eventos_normales": 1.0,
+  "matriz_confusion_agente": [
+    [
+      104,
+      0,
+      0
+    ],
+    [
+      0,
+      117,
+      0
+    ],
+    [
+      0,
+      0,
+      9
+    ]
+  ],
+  "alertas_en_eventos_normales": 0.0,
+  "anomalias_criticas_bloqueadas": 46,
+  "anomalias_no_detectadas": 13,
+  "anomalias_finalmente_autorizadas": 1,
+  "tiempo_ms": {
+    "promedio": 10.76,
+    "p95": 11.87,
+    "maximo": 15.74
+  },
+  "por_rol": {
+    "rol_administrador": 1.0,
+    "rol_administrativo": 1.0,
+    "rol_enfermeria": 1.0,
+    "rol_medico": 1.0
+  },
+  "errores_legitimas": [],
+  "errores_no_autorizadas": [],
+  "nlp": {
+    "total": 40,
+    "exactitud_documento": 1.0,
+    "exactitud_paciente": 1.0,
+    "exactitud_total": 1.0,
+    "errores": []
+  }
+}

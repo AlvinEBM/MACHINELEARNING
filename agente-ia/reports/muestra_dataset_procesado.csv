@@ -1,0 +1,9 @@
+rol_medico,rol_enfermeria,rol_administrativo,rol_administrador,doc_historia_clinica,doc_resultado_laboratorio,doc_orden_medica,rel_medico_tratante,rel_personal_apoyo,rel_sin_relacion,autorizacion_excepcional,hora_num,fuera_horario,frecuencia_accesos,frecuencia_std,desviacion_rol,objetivo
+0,1,0,0,1,0,0,0,1,0,1,14.4,0,21.0,0.639,0.416,1
+0,1,0,0,1,0,0,0,1,0,0,13.28,0,2.0,-0.749,-0.954,2
+1,0,0,0,0,0,1,0,0,1,1,11.33,0,12.0,-0.018,-0.063,1
+1,0,0,0,1,0,0,0,1,0,0,7.15,0,9.0,-0.237,-0.29,2
+0,0,0,1,1,0,0,0,0,1,0,16.12,0,3.0,-0.676,-0.421,2
+0,0,0,1,1,0,0,0,0,1,0,10.1,0,1.0,-0.822,-0.587,2
+0,0,0,1,0,1,0,0,1,0,1,16.62,0,4.0,-0.603,-0.338,2
+0,1,0,0,0,1,0,0,1,0,0,9.1,0,22.0,0.712,0.488,1
