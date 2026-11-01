@@ -214,7 +214,7 @@ def main():
     plt.close(fig)
 
     imp = res["arbol_decision"]["importancia_atributos"]
-    fig, ax = plt.subplots(figsize=(5.6, 3.6))
+    fig, ax = plt.subplots(figsize=(6.6, 3.6))
     nombres = [NOMBRES_LEGIBLES.get(k, k) for k in imp][::-1]
     ax.barh(nombres, list(imp.values())[::-1], color=AZUL, height=0.6)
     ax.set_xlabel("Importancia (reducción de Gini)")

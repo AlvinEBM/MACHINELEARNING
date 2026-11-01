@@ -1,0 +1,12 @@
+variable,tipo,valores,descripcion
+id_evento,Identificador,E00001–E08000 / T00001–T00330,Código único del evento de acceso (no se usa como predictor)
+grupo,Categórica,legitima; no_autorizada; rol_*; excepcional; anomalia,Solo en muestra_validacion_330.csv: tipo de escenario de la muestra intencional
+rol_usuario,Categórica,medico; enfermeria; administrativo; administrador,Perfil del usuario que solicita el documento
+tipo_documento,Categórica,historia_clinica; resultado_laboratorio; orden_medica,Documento médico solicitado
+relacion_paciente,Categórica,medico_tratante; personal_apoyo; sin_relacion,Relación registrada entre el usuario y el paciente
+hora_acceso,Temporal,HH:MM (00:00–23:59),Hora de la solicitud
+autorizacion_excepcional,Binaria,0; 1,1 si existe una autorización excepcional vigente aprobada por el administrador
+frecuencia_accesos,Numérica,entero ≥ 1,Solicitudes del mismo usuario en la última hora incluida la actual
+resultado_esperado,Categórica (etiqueta),AUTORIZAR; RECHAZAR; REQUIERE_APROBACION,Decisión correcta asignada por la matriz de roles y permisos antes del entrenamiento
+anomalia,Binaria (etiqueta),0; 1,1 si el evento contiene un patrón anómalo implantado
+particion,Categórica,entrenamiento; validacion; prueba,Partición estratificada 70/15/15 usada en el experimento (semilla 42)
