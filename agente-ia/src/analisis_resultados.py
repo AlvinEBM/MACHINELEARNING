@@ -7,6 +7,8 @@ Análisis complementario para el capítulo IV del informe.
        - Situación actual: sin control de acceso (todo usuario autenticado accede).
        - RBAC estático: permisos solo por rol, sin relación con el paciente ni análisis de comportamiento.
   4. Figuras compuestas para el informe.
+  5. Verificación de las métricas idénticas del Árbol y la Regresión Logística (techo por ruido de registro).
+  6. Evaluación del agente completo sobre el conjunto de prueba de 1 192 eventos (con ruido y anomalías).
 
 Requiere haber ejecutado antes: generar_dataset, entrenar y evaluar.
 Uso:  python -m src.analisis_resultados
@@ -20,7 +22,7 @@ from PIL import Image
 from sklearn.base import clone
 from sklearn.ensemble import IsolationForest
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, f1_score, recall_score
+from sklearn.metrics import accuracy_score, f1_score, log_loss, recall_score, roc_auc_score
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
@@ -135,10 +137,85 @@ def figura_compuesta(archivos: list[str], salida: str, ancho_max: int = 2400):
     lienzo.save(FIGURES_DIR / salida)
 
 
+def _particiones(df: pd.DataFrame):
+    y = codificar_objetivo(df["resultado_esperado"])
+    idx = np.arange(len(df))
+    tr, tmp = train_test_split(idx, test_size=0.30, stratify=y, random_state=SEMILLA)
+    va, te = train_test_split(tmp, test_size=0.50, stratify=y[tmp], random_state=SEMILLA)
+    return y, {"entrenamiento": tr, "validacion": va, "prueba": te}
+
+
+def _ruido(df: pd.DataFrame) -> np.ndarray:
+    """True si la matriz aplicada a los datos registrados no coincide con la etiqueta (relación mal registrada)."""
+    return np.array([
+        decision_esperada(r.rol_usuario, r.tipo_documento, r.relacion_paciente, hora_a_decimal(r.hora_acceso),
+                          r.autorizacion_excepcional) != r.resultado_esperado
+        for r in df.itertuples()
+    ])
+
+
+def verificacion_modelos(df: pd.DataFrame) -> dict:
+    """¿Por qué el Árbol y la Regresión Logística tienen métricas idénticas?"""
+    import pickle
+    from .config import MODELS_DIR
+    from .reglas import DECISIONES
+    cargar = lambda n: pickle.load(open(MODELS_DIR / f"{n}.pkl", "rb"))
+    arbol, logistica, prep = cargar("arbol_decision"), cargar("regresion_logistica"), cargar("preprocesador")
+    y, parts = _particiones(df)
+    ruido = _ruido(df)
+    regla = np.array([DECISIONES.index(decision_esperada(r.rol_usuario, r.tipo_documento, r.relacion_paciente,
+                                                         hora_a_decimal(r.hora_acceso), r.autorizacion_excepcional))
+                      for r in df.itertuples()])
+    out = {}
+    for nombre, ix in parts.items():
+        X = prep.transform(df.iloc[ix])
+        pa, pl = arbol.predict(X[FEATURES_ARBOL]), logistica.predict(X[FEATURES_LOGISTICA])
+        proba_a, proba_l = arbol.predict_proba(X[FEATURES_ARBOL]), logistica.predict_proba(X[FEATURES_LOGISTICA])
+        out[nombre] = {
+            "eventos": int(len(ix)), "eventos_con_ruido": int(ruido[ix].sum()),
+            "exactitud_maxima_alcanzable": round(float(1 - ruido[ix].mean()), 4),
+            "exactitud_arbol": round(accuracy_score(y[ix], pa), 4),
+            "exactitud_logistica": round(accuracy_score(y[ix], pl), 4),
+            "predicciones_coincidentes": round(float((pa == pl).mean()), 4),
+            "arbol_reproduce_la_matriz": round(float((pa == regla[ix]).mean()), 4),
+            "errores_arbol_en_eventos_con_ruido": int(((pa != y[ix]) & ruido[ix]).sum()),
+            "roc_auc_arbol": round(roc_auc_score(y[ix], proba_a, multi_class="ovr"), 4),
+            "roc_auc_logistica": round(roc_auc_score(y[ix], proba_l, multi_class="ovr"), 4),
+            "log_loss_arbol": round(log_loss(y[ix], np.clip(proba_a, 1e-15, 1)), 4),
+            "log_loss_logistica": round(log_loss(y[ix], proba_l), 4),
+        }
+    return out
+
+
+def agente_en_prueba(df: pd.DataFrame) -> dict:
+    """Agente completo (tres fases) sobre el conjunto de prueba aleatorio, que sí contiene ruido de registro."""
+    from .agente import AgenteAcceso
+    from .auditoria import Auditoria
+    _, parts = _particiones(df)
+    te = df.iloc[parts["prueba"]].copy()
+    te["ruido"] = _ruido(te)
+    agente = AgenteAcceso(Auditoria("sqlite://"))
+    te["decision"] = [agente.procesar_solicitud(1, r.rol_usuario, r.tipo_documento, r.relacion_paciente, r.hora_acceso,
+                                                bool(r.autorizacion_excepcional), int(r.frecuencia_accesos),
+                                                registrar=False)["decision"] for r in te.itertuples()]
+    n, a = te[te.anomalia == 0], te[te.anomalia == 1]
+    ok = n.decision == n.resultado_esperado
+    return {
+        "eventos": int(len(te)), "normales": int(len(n)), "anomalos": int(len(a)),
+        "exactitud_normales": round(float(ok.mean()), 4), "errores_normales": int((~ok).sum()),
+        "errores_normales_con_ruido": int(((~ok) & n.ruido).sum()),
+        "exactitud_normales_sin_ruido": round(float(ok[~n.ruido].mean()), 4),
+        "autorizacion_legitimos": round(float((n[n.resultado_esperado == "AUTORIZAR"].decision == "AUTORIZAR").mean()), 4),
+        "rechazo_no_autorizados": round(float((n[n.resultado_esperado == "RECHAZAR"].decision == "RECHAZAR").mean()), 4),
+        "anomalias_autorizadas": int((a.decision == "AUTORIZAR").sum()),
+    }
+
+
 def main():
     df = pd.read_csv(DATA_DIR / "dataset_entrenamiento.csv")
     res = {"validacion_cruzada_5": validacion_cruzada(df), "analisis_errores_arbol": analisis_errores(df),
-           "lineas_base": lineas_base()}
+           "lineas_base": lineas_base(), "verificacion_modelos": verificacion_modelos(df),
+           "agente_en_prueba": agente_en_prueba(df)}
     with open(REPORTS_DIR / "analisis_resultados.json", "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=2)
     figura_compuesta(["matriz_confusion_arbol.png", "matriz_confusion_logistica.png", "matriz_confusion_isolation.png"],

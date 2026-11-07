@@ -80,5 +80,61 @@
     "n_normales": 230,
     "n_anomalias": 100,
     "anomalias_detenidas_agente": 99
+  },
+  "verificacion_modelos": {
+    "entrenamiento": {
+      "eventos": 5558,
+      "eventos_con_ruido": 76,
+      "exactitud_maxima_alcanzable": 0.9863,
+      "exactitud_arbol": 0.9863,
+      "exactitud_logistica": 0.9863,
+      "predicciones_coincidentes": 1.0,
+      "arbol_reproduce_la_matriz": 1.0,
+      "errores_arbol_en_eventos_con_ruido": 76,
+      "roc_auc_arbol": 0.9975,
+      "roc_auc_logistica": 0.9949,
+      "log_loss_arbol": 0.0599,
+      "log_loss_logistica": 0.1007
+    },
+    "validacion": {
+      "eventos": 1191,
+      "eventos_con_ruido": 15,
+      "exactitud_maxima_alcanzable": 0.9874,
+      "exactitud_arbol": 0.9874,
+      "exactitud_logistica": 0.9874,
+      "predicciones_coincidentes": 1.0,
+      "arbol_reproduce_la_matriz": 1.0,
+      "errores_arbol_en_eventos_con_ruido": 15,
+      "roc_auc_arbol": 0.9962,
+      "roc_auc_logistica": 0.9942,
+      "log_loss_arbol": 0.088,
+      "log_loss_logistica": 0.0984
+    },
+    "prueba": {
+      "eventos": 1192,
+      "eventos_con_ruido": 28,
+      "exactitud_maxima_alcanzable": 0.9765,
+      "exactitud_arbol": 0.9765,
+      "exactitud_logistica": 0.9765,
+      "predicciones_coincidentes": 1.0,
+      "arbol_reproduce_la_matriz": 1.0,
+      "errores_arbol_en_eventos_con_ruido": 28,
+      "roc_auc_arbol": 0.993,
+      "roc_auc_logistica": 0.9923,
+      "log_loss_arbol": 0.1542,
+      "log_loss_logistica": 0.1263
+    }
+  },
+  "agente_en_prueba": {
+    "eventos": 1192,
+    "normales": 1075,
+    "anomalos": 117,
+    "exactitud_normales": 0.9749,
+    "errores_normales": 27,
+    "errores_normales_con_ruido": 26,
+    "exactitud_normales_sin_ruido": 0.999,
+    "autorizacion_legitimos": 0.9624,
+    "rechazo_no_autorizados": 0.9908,
+    "anomalias_autorizadas": 0
   }
 }
