@@ -1,0 +1,310 @@
+{
+ "base_40": {
+  "total": 40,
+  "ambos_ok": 40
+ },
+ "categorias": {
+  "ortografia": {
+   "total": 10,
+   "documento_ok": 6,
+   "paciente_ok": 10,
+   "ambos_ok": 6
+  },
+  "coloquial": {
+   "total": 10,
+   "documento_ok": 5,
+   "paciente_ok": 9,
+   "ambos_ok": 4
+  },
+  "sin_paciente": {
+   "total": 8,
+   "documento_ok": 8,
+   "paciente_ok": 8,
+   "ambos_ok": 8
+  },
+  "sin_documento": {
+   "total": 8,
+   "documento_ok": 8,
+   "paciente_ok": 8,
+   "ambos_ok": 8
+  },
+  "varios_documentos": {
+   "total": 6,
+   "documento_ok": 0,
+   "paciente_ok": 6,
+   "ambos_ok": 0
+  },
+  "formatos": {
+   "total": 8,
+   "documento_ok": 8,
+   "paciente_ok": 6,
+   "ambos_ok": 6
+  },
+  "negacion": {
+   "total": 10,
+   "documento_ok": 9,
+   "paciente_ok": 8,
+   "ambos_ok": 7
+  }
+ },
+ "total_ampliado": {
+  "total": 60,
+  "documento_ok": 44,
+  "paciente_ok": 55,
+  "ambos_ok": 39
+ },
+ "errores": [
+  {
+   "categoria": "ortografia",
+   "mensaje": "nesecito la istoria clinica de Juan Perez",
+   "esperado": [
+    "historia_clinica",
+    "Juan Perez"
+   ],
+   "obtenido": [
+    null,
+    "Juan Perez"
+   ]
+  },
+  {
+   "categoria": "ortografia",
+   "mensaje": "quiero ver la hitoria de Rosa Quispe",
+   "esperado": [
+    "historia_clinica",
+    "Rosa Quispe"
+   ],
+   "obtenido": [
+    null,
+    "Rosa Quispe"
+   ]
+  },
+  {
+   "categoria": "ortografia",
+   "mensaje": "la recta de Mateo Perez",
+   "esperado": [
+    "orden_medica",
+    "Mateo Perez"
+   ],
+   "obtenido": [
+    null,
+    "Mateo Perez"
+   ]
+  },
+  {
+   "categoria": "ortografia",
+   "mensaje": "ver el espediente de Carmen Huaman",
+   "esperado": [
+    "historia_clinica",
+    "Carmen Huaman"
+   ],
+   "obtenido": [
+    null,
+    "Carmen Huaman"
+   ]
+  },
+  {
+   "categoria": "coloquial",
+   "mensaje": "los labs de Juan Perez",
+   "esperado": [
+    "resultado_laboratorio",
+    "Juan Perez"
+   ],
+   "obtenido": [
+    null,
+    "Juan Perez"
+   ]
+  },
+  {
+   "categoria": "coloquial",
+   "mensaje": "el informe de la eco de Milagros Paredes",
+   "esperado": [
+    "resultado_laboratorio",
+    "Milagros Paredes"
+   ],
+   "obtenido": [
+    null,
+    "Milagros Paredes"
+   ]
+  },
+  {
+   "categoria": "coloquial",
+   "mensaje": "los medicamentos que toma Elena Cruz",
+   "esperado": [
+    "orden_medica",
+    "Elena Cruz"
+   ],
+   "obtenido": [
+    null,
+    "Elena Cruz"
+   ]
+  },
+  {
+   "categoria": "coloquial",
+   "mensaje": "el perfil lipidico de Andrea Vega",
+   "esperado": [
+    "resultado_laboratorio",
+    "Andrea Vega"
+   ],
+   "obtenido": [
+    null,
+    "Andrea Vega"
+   ]
+  },
+  {
+   "categoria": "coloquial",
+   "mensaje": "su record medico de Diego Chavez",
+   "esperado": [
+    "historia_clinica",
+    "Diego Chavez"
+   ],
+   "obtenido": [
+    "orden_medica",
+    "Diego Chavez"
+   ]
+  },
+  {
+   "categoria": "coloquial",
+   "mensaje": "la dosis indicada para Camila Torres",
+   "esperado": [
+    "orden_medica",
+    "Camila Torres"
+   ],
+   "obtenido": [
+    "orden_medica",
+    null
+   ]
+  },
+  {
+   "categoria": "varios_documentos",
+   "mensaje": "la historia y los analisis de Juan Perez",
+   "esperado": [
+    null,
+    "Juan Perez"
+   ],
+   "obtenido": [
+    "historia_clinica",
+    "Juan Perez"
+   ]
+  },
+  {
+   "categoria": "varios_documentos",
+   "mensaje": "el laboratorio y la receta de Ana Flores",
+   "esperado": [
+    null,
+    "Ana Flores"
+   ],
+   "obtenido": [
+    "orden_medica",
+    "Ana Flores"
+   ]
+  },
+  {
+   "categoria": "varios_documentos",
+   "mensaje": "expediente y ordenes de Rosa Quispe",
+   "esperado": [
+    null,
+    "Rosa Quispe"
+   ],
+   "obtenido": [
+    "orden_medica",
+    "Rosa Quispe"
+   ]
+  },
+  {
+   "categoria": "varios_documentos",
+   "mensaje": "examenes e indicaciones de Mateo Perez",
+   "esperado": [
+    null,
+    "Mateo Perez"
+   ],
+   "obtenido": [
+    "orden_medica",
+    "Mateo Perez"
+   ]
+  },
+  {
+   "categoria": "varios_documentos",
+   "mensaje": "historia clinica y receta de Luis Ramos",
+   "esperado": [
+    null,
+    "Luis Ramos"
+   ],
+   "obtenido": [
+    "historia_clinica",
+    "Luis Ramos"
+   ]
+  },
+  {
+   "categoria": "varios_documentos",
+   "mensaje": "quiero todo: hc, laboratorio y ordenes de Kevin Ortiz",
+   "esperado": [
+    null,
+    "Kevin Ortiz"
+   ],
+   "obtenido": [
+    "orden_medica",
+    "Kevin Ortiz"
+   ]
+  },
+  {
+   "categoria": "formatos",
+   "mensaje": "resultados del dni 45.678.912",
+   "esperado": [
+    "resultado_laboratorio",
+    "45678912"
+   ],
+   "obtenido": [
+    "resultado_laboratorio",
+    "Dni"
+   ]
+  },
+  {
+   "categoria": "formatos",
+   "mensaje": "la orden de De la Cruz",
+   "esperado": [
+    "orden_medica",
+    "De La Cruz"
+   ],
+   "obtenido": [
+    "orden_medica",
+    "Cruz"
+   ]
+  },
+  {
+   "categoria": "negacion",
+   "mensaje": "sin la historia completa, solo el hemograma de Lucia Torres",
+   "esperado": [
+    "resultado_laboratorio",
+    "Lucia Torres"
+   ],
+   "obtenido": [
+    "historia_clinica",
+    "Lucia Torres"
+   ]
+  },
+  {
+   "categoria": "negacion",
+   "mensaje": "buenas tardes doctora, para la consulta de las 3 necesito revisar el expediente de Pedro Castillo porque viene a control",
+   "esperado": [
+    "historia_clinica",
+    "Pedro Castillo"
+   ],
+   "obtenido": [
+    "historia_clinica",
+    null
+   ]
+  },
+  {
+   "categoria": "negacion",
+   "mensaje": "solo para confirmar la dosis, la receta de Mateo Perez",
+   "esperado": [
+    "orden_medica",
+    "Mateo Perez"
+   ],
+   "obtenido": [
+    "orden_medica",
+    null
+   ]
+  }
+ ]
+}

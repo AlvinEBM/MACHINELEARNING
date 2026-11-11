@@ -1,0 +1,106 @@
+{
+ "1 worker": [
+  {
+   "usuarios_simultaneos": 1,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 25.1,
+   "p95_ms": 33.0,
+   "p99_ms": 35.3,
+   "max_ms": 36.6,
+   "solicitudes_por_segundo": 38.4
+  },
+  {
+   "usuarios_simultaneos": 5,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 120.7,
+   "p95_ms": 198.8,
+   "p99_ms": 227.8,
+   "max_ms": 277.3,
+   "solicitudes_por_segundo": 39.4
+  },
+  {
+   "usuarios_simultaneos": 10,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 208.4,
+   "p95_ms": 630.6,
+   "p99_ms": 1417.4,
+   "max_ms": 1961.3,
+   "solicitudes_por_segundo": 37.3
+  },
+  {
+   "usuarios_simultaneos": 20,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 285.8,
+   "p95_ms": 1752.2,
+   "p99_ms": 3092.8,
+   "max_ms": 4044.0,
+   "solicitudes_por_segundo": 36.9
+  },
+  {
+   "usuarios_simultaneos": 50,
+   "solicitudes": 300,
+   "errores": 1,
+   "p50_ms": 1254.5,
+   "p95_ms": 2725.8,
+   "p99_ms": 4087.2,
+   "max_ms": 6419.0,
+   "solicitudes_por_segundo": 34.0
+  }
+ ],
+ "2 workers": [
+  {
+   "usuarios_simultaneos": 1,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 68.0,
+   "p95_ms": 76.0,
+   "p99_ms": 76.2,
+   "max_ms": 83.9,
+   "solicitudes_por_segundo": 14.6
+  },
+  {
+   "usuarios_simultaneos": 5,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 94.7,
+   "p95_ms": 156.4,
+   "p99_ms": 305.3,
+   "max_ms": 408.2,
+   "solicitudes_por_segundo": 47.7
+  },
+  {
+   "usuarios_simultaneos": 10,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 188.0,
+   "p95_ms": 366.8,
+   "p99_ms": 545.8,
+   "max_ms": 772.0,
+   "solicitudes_por_segundo": 50.6
+  },
+  {
+   "usuarios_simultaneos": 20,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 245.4,
+   "p95_ms": 919.9,
+   "p99_ms": 1871.5,
+   "max_ms": 3776.8,
+   "solicitudes_por_segundo": 56.8
+  },
+  {
+   "usuarios_simultaneos": 50,
+   "solicitudes": 300,
+   "errores": 0,
+   "p50_ms": 578.8,
+   "p95_ms": 2608.4,
+   "p99_ms": 3963.0,
+   "max_ms": 4106.7,
+   "solicitudes_por_segundo": 55.1
+  }
+ ]
+}

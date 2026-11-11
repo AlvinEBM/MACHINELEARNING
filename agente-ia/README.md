@@ -42,6 +42,10 @@ python -m src.generar_dataset    # 1. genera el dataset sintético
 python -m src.entrenar           # 2. entrena y guarda los modelos
 python -m src.evaluar            # 3. evalúa los criterios de éxito (o --bd para leer la muestra desde MySQL)
 python -m src.analisis_resultados  # validación cruzada, análisis de errores y líneas base
+python -m src.analisis_complementario  # generación del dataset, ablación, sensibilidad de umbrales y flujo de anomalías
+python -m src.evaluar_nlp_ampliado    # 60 frases de mayor dificultad para el lenguaje natural
+# prueba de carga (con la API en ejecución: uvicorn src.api:app --port 8000 --workers 1)
+python -m src.prueba_carga --niveles 1 5 10 20 50 --solicitudes 300 --etiqueta "1 worker"
 python -m pytest -q              # 4. pruebas
 
 uvicorn src.api:app --reload --port 8000   # 5. levanta la API
@@ -58,7 +62,7 @@ Por defecto se usa SQLite (`agente_auditoria.db`). Para registrar la auditoría 
 MySQL de CareNest, copia `.env.example` como `.env` y define:
 
 ```
-AGENTE_DB_URL=mysql+pymysql://root:tu_clave@localhost:3306/CitasMedicasSanGenaronew
+AGENTE_DB_URL=mysql+pymysql://root:tu_clave@localhost:3306/MachineCitasMedicasSanGenaro
 ```
 
 Las tablas `access_logs` y `anomaly_alerts` se crean con `BD_agente_ia.sql`, que además impide
