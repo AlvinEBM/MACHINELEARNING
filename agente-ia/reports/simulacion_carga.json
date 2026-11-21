@@ -1,0 +1,365 @@
+{
+ "calibracion": {
+  "servicio_un_usuario_ms": 32.95,
+  "servicio_efectivo_1_worker_ms": 30.91,
+  "servicio_efectivo_2_workers_ms": 41.03,
+  "servicio_usado_ms": 41.03
+ },
+ "validacion_cerrado": [
+  {
+   "workers": 1,
+   "usuarios": 1,
+   "medido_p95_ms": 43.9,
+   "simulado_p95_ms": 54.7,
+   "medido_rps": 30.3,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 1,
+   "usuarios": 5,
+   "medido_p95_ms": 207.4,
+   "simulado_p95_ms": 241.1,
+   "medido_rps": 32.6,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 1,
+   "usuarios": 10,
+   "medido_p95_ms": 433.8,
+   "simulado_p95_ms": 459.3,
+   "medido_rps": 33.0,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 1,
+   "usuarios": 20,
+   "medido_p95_ms": 922.3,
+   "simulado_p95_ms": 905.9,
+   "medido_rps": 31.3,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 1,
+   "usuarios": 50,
+   "medido_p95_ms": 2014.7,
+   "simulado_p95_ms": 2154.2,
+   "medido_rps": 32.2,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 1,
+   "usuarios": 100,
+   "medido_p95_ms": 3684.8,
+   "simulado_p95_ms": 4226.2,
+   "medido_rps": 32.5,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 2,
+   "usuarios": 1,
+   "medido_p95_ms": 40.7,
+   "simulado_p95_ms": 54.7,
+   "medido_rps": 34.3,
+   "simulado_rps": 24.5
+  },
+  {
+   "workers": 2,
+   "usuarios": 5,
+   "medido_p95_ms": 137.9,
+   "simulado_p95_ms": 128.0,
+   "medido_rps": 68.4,
+   "simulado_rps": 49.0
+  },
+  {
+   "workers": 2,
+   "usuarios": 10,
+   "medido_p95_ms": 287.6,
+   "simulado_p95_ms": 235.7,
+   "medido_rps": 69.1,
+   "simulado_rps": 49.0
+  },
+  {
+   "workers": 2,
+   "usuarios": 20,
+   "medido_p95_ms": 574.3,
+   "simulado_p95_ms": 453.8,
+   "medido_rps": 57.1,
+   "simulado_rps": 49.0
+  },
+  {
+   "workers": 2,
+   "usuarios": 50,
+   "medido_p95_ms": 1533.0,
+   "simulado_p95_ms": 1081.0,
+   "medido_rps": 47.1,
+   "simulado_rps": 49.0
+  },
+  {
+   "workers": 2,
+   "usuarios": 100,
+   "medido_p95_ms": 2725.7,
+   "simulado_p95_ms": 2116.4,
+   "medido_rps": 50.4,
+   "simulado_rps": 49.0
+  }
+ ],
+ "validacion_abierto": [
+  {
+   "workers": 1,
+   "trabajadores": 50,
+   "rps": 5.3,
+   "errores": 0,
+   "medido_p50_ms": 33.0,
+   "medido_p95_ms": 74.0,
+   "simulado_p50_ms": 42.4,
+   "simulado_p95_ms": 83.1,
+   "utilizacion_simulada": 0.218
+  },
+  {
+   "workers": 1,
+   "trabajadores": 100,
+   "rps": 10.6,
+   "errores": 0,
+   "medido_p50_ms": 38.0,
+   "medido_p95_ms": 100.0,
+   "simulado_p50_ms": 46.1,
+   "simulado_p95_ms": 117.4,
+   "utilizacion_simulada": 0.435
+  },
+  {
+   "workers": 1,
+   "trabajadores": 200,
+   "rps": 20.8,
+   "errores": 0,
+   "medido_p50_ms": 64.0,
+   "medido_p95_ms": 320.0,
+   "simulado_p50_ms": 134.1,
+   "simulado_p95_ms": 511.3,
+   "utilizacion_simulada": 0.855
+  },
+  {
+   "workers": 1,
+   "trabajadores": 400,
+   "rps": 32.0,
+   "errores": 0,
+   "medido_p50_ms": 2400.0,
+   "medido_p95_ms": 4800.0,
+   "simulado_p50_ms": 106384.1,
+   "simulado_p95_ms": 188881.6,
+   "utilizacion_simulada": 1.314
+  },
+  {
+   "workers": 2,
+   "trabajadores": 50,
+   "rps": 5.2,
+   "errores": 0,
+   "medido_p50_ms": 34.0,
+   "medido_p95_ms": 73.0,
+   "simulado_p50_ms": 39.9,
+   "simulado_p95_ms": 56.4,
+   "utilizacion_simulada": 0.106
+  },
+  {
+   "workers": 2,
+   "trabajadores": 100,
+   "rps": 9.8,
+   "errores": 0,
+   "medido_p50_ms": 35.0,
+   "medido_p95_ms": 71.0,
+   "simulado_p50_ms": 40.5,
+   "simulado_p95_ms": 61.4,
+   "utilizacion_simulada": 0.201
+  },
+  {
+   "workers": 2,
+   "trabajadores": 200,
+   "rps": 20.9,
+   "errores": 0,
+   "medido_p50_ms": 43.0,
+   "medido_p95_ms": 110.0,
+   "simulado_p50_ms": 42.4,
+   "simulado_p95_ms": 75.7,
+   "utilizacion_simulada": 0.428
+  },
+  {
+   "workers": 2,
+   "trabajadores": 400,
+   "rps": 39.7,
+   "errores": 0,
+   "medido_p50_ms": 88.0,
+   "medido_p95_ms": 1500.0,
+   "simulado_p50_ms": 66.3,
+   "simulado_p95_ms": 203.7,
+   "utilizacion_simulada": 0.815
+  }
+ ],
+ "proyeccion": [
+  {
+   "trabajadores": 40,
+   "solicitudes_por_minuto": 1,
+   "tasa_por_segundo": 0.67,
+   "nucleos": 2,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.014
+  },
+  {
+   "trabajadores": 40,
+   "solicitudes_por_minuto": 1,
+   "tasa_por_segundo": 0.67,
+   "nucleos": 4,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.007
+  },
+  {
+   "trabajadores": 40,
+   "solicitudes_por_minuto": 1,
+   "tasa_por_segundo": 0.67,
+   "nucleos": 8,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.003
+  },
+  {
+   "trabajadores": 40,
+   "solicitudes_por_minuto": 3,
+   "tasa_por_segundo": 2.0,
+   "nucleos": 2,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.041
+  },
+  {
+   "trabajadores": 40,
+   "solicitudes_por_minuto": 3,
+   "tasa_por_segundo": 2.0,
+   "nucleos": 4,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.021
+  },
+  {
+   "trabajadores": 40,
+   "solicitudes_por_minuto": 3,
+   "tasa_por_segundo": 2.0,
+   "nucleos": 8,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.01
+  },
+  {
+   "trabajadores": 100,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 3.33,
+   "nucleos": 2,
+   "p50_ms": 39.7,
+   "p95_ms": 55.3,
+   "p99_ms": 83.1,
+   "utilizacion": 0.068
+  },
+  {
+   "trabajadores": 100,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 3.33,
+   "nucleos": 4,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.034
+  },
+  {
+   "trabajadores": 100,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 3.33,
+   "nucleos": 8,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.017
+  },
+  {
+   "trabajadores": 200,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 6.67,
+   "nucleos": 2,
+   "p50_ms": 39.9,
+   "p95_ms": 57.8,
+   "p99_ms": 83.1,
+   "utilizacion": 0.137
+  },
+  {
+   "trabajadores": 200,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 6.67,
+   "nucleos": 4,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.068
+  },
+  {
+   "trabajadores": 200,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 6.67,
+   "nucleos": 8,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.034
+  },
+  {
+   "trabajadores": 500,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 16.67,
+   "nucleos": 2,
+   "p50_ms": 41.5,
+   "p95_ms": 69.8,
+   "p99_ms": 89.7,
+   "utilizacion": 0.342
+  },
+  {
+   "trabajadores": 500,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 16.67,
+   "nucleos": 4,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.171
+  },
+  {
+   "trabajadores": 500,
+   "solicitudes_por_minuto": 2,
+   "tasa_por_segundo": 16.67,
+   "nucleos": 8,
+   "p50_ms": 39.7,
+   "p95_ms": 54.9,
+   "p99_ms": 83.1,
+   "utilizacion": 0.085
+  }
+ ],
+ "tasa_maxima_p95_500ms": {
+  "1": 20.6,
+  "2": 44.9,
+  "4": 95.8,
+  "8": 194.7
+ },
+ "tasa_maxima_con_margen_30": {
+  "1": 20.1,
+  "2": 44.6,
+  "4": 92.9,
+  "8": 191.6
+ },
+ "error_relativo_p95": {
+  "medio": 0.176,
+  "maximo": 0.344,
+  "n_comparaciones": 17
+ }
+}

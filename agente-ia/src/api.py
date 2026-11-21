@@ -41,6 +41,16 @@ def agente() -> AgenteAcceso:
     return _agente
 
 
+@app.on_event("startup")
+def precargar_modelos():
+    """Carga los modelos y la conexión a la auditoría al iniciar cada proceso (worker), y no en la primera
+    solicitud: así ningún trabajador espera varios segundos por un arranque en frío."""
+    try:
+        agente()
+    except Exception as e:  # el servidor arranca igual y /health informa el problema
+        print(f"[agente] no se pudieron precargar los modelos: {e}")
+
+
 def verificar_clave(x_api_key: Optional[str] = Header(default=None)):
     if API_KEY and x_api_key != API_KEY:
         raise HTTPException(status_code=401, detail="Clave de API inválida")

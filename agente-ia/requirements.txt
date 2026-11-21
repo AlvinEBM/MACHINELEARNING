@@ -13,3 +13,7 @@ pytest>=8.0
 httpx>=0.27
 jupyter>=1.0
 python-dotenv>=1.0
+locust>=2.20
+simpy>=4.1
+psutil>=5.9
+gunicorn>=22.0 ; platform_system != "Windows"

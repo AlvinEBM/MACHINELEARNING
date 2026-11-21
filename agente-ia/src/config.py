@@ -19,7 +19,7 @@ ZONA_HORARIA = "America/Lima"
 
 # Base de datos de auditoría (SQLite en desarrollo; MySQL/PostgreSQL en integración)
 #   SQLite:  sqlite:///agente_auditoria.db
-#   MySQL:   mysql+pymysql://usuario:clave@localhost:3306/CitasMedicasSanGenaronew
+#   MySQL:   mysql+pymysql://usuario:clave@localhost:3306/MachineCitasMedicasSanGenaro
 DB_URL = os.getenv("AGENTE_DB_URL", f"sqlite:///{BASE_DIR / 'agente_auditoria.db'}")
 
 # Umbrales de decisión (Tabla 9 del informe)

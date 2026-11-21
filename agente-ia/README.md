@@ -44,8 +44,17 @@ python -m src.evaluar            # 3. evalúa los criterios de éxito (o --bd pa
 python -m src.analisis_resultados  # validación cruzada, análisis de errores y líneas base
 python -m src.analisis_complementario  # generación del dataset, ablación, sensibilidad de umbrales y flujo de anomalías
 python -m src.evaluar_nlp_ampliado    # 60 frases de mayor dificultad para el lenguaje natural
-# prueba de carga (con la API en ejecución: uvicorn src.api:app --port 8000 --workers 1)
-python -m src.prueba_carga --niveles 1 5 10 20 50 --solicitudes 300 --etiqueta "1 worker"
+# rendimiento con usuarios simultáneos (sección 4.3 del informe)
+# 1) servidor con la auditoría en MySQL (en Linux, con Gunicorn; tantos workers como núcleos)
+#    export AGENTE_DB_URL=mysql+pymysql://root:1234@localhost:3306/MachineCitasMedicasSanGenaro
+#    gunicorn src.api:app -k uvicorn.workers.UvicornWorker -w 2 -b 0.0.0.0:8000 --keep-alive 75
+#    (en Windows: uvicorn src.api:app --port 8000, un solo proceso)
+# 2) prueba cerrada (capacidad máxima) con medición de CPU
+python -m src.prueba_carga --niveles 1 5 10 20 50 100 --solicitudes 400 --etiqueta "MySQL 2 workers" --salida prueba_carga_mysql.json --medir-cpu
+# 3) simulación de trabajadores con pausas (Locust)
+locust -f src/locustfile.py --host http://127.0.0.1:8000 --headless -u 200 -r 50 -t 130s --reset-stats --csv reports/locust/w2_u200
+# 4) modelo de colas en SimPy (validación y proyección a 2, 4 y 8 núcleos)
+python -m src.simulacion_carga
 python -m pytest -q              # 4. pruebas
 
 uvicorn src.api:app --reload --port 8000   # 5. levanta la API

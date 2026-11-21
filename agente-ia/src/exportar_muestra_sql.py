@@ -20,7 +20,7 @@ CABECERA = """-- ===============================================================
 -- Generado automáticamente por agente-ia/src/exportar_muestra_sql.py
 -- a partir de agente-ia/data/*.csv (datos sintéticos, sin datos personales).
 -- =================================================================
-USE CitasMedicasSanGenaronew;
+USE MachineCitasMedicasSanGenaro;
 SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS `resultados_prueba`;

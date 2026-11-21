@@ -39,7 +39,7 @@
     {
       "criterio": "Tiempo de respuesta (máximo)",
       "meta": "< 500 ms",
-      "resultado": "15.7 ms (promedio 10.8 ms)",
+      "resultado": "29.6 ms (promedio 16.4 ms)",
       "n": 330,
       "cumple": true
     },
@@ -81,9 +81,9 @@
   "anomalias_no_detectadas": 13,
   "anomalias_finalmente_autorizadas": 1,
   "tiempo_ms": {
-    "promedio": 10.76,
-    "p95": 11.87,
-    "maximo": 15.74
+    "promedio": 16.35,
+    "p95": 21.3,
+    "maximo": 29.55
   },
   "por_rol": {
     "rol_administrador": 1.0,

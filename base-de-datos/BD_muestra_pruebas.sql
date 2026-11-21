@@ -8384,4 +8384,3 @@ INSERT INTO `dataset_eventos` (id_evento, rol_usuario, tipo_documento, relacion_
 --   SELECT ROUND(100*AVG(r.nivel_alerta <> 'NORMAL'),1) AS recall_anomalias
 --   FROM resultados_prueba r JOIN muestra_escenarios m USING (id_evento)
 --   WHERE m.anomalia = 1 AND r.ejecucion = (SELECT MAX(ejecucion) FROM resultados_prueba);
-SELECT COUNT(*) FROM MachineCitasMedicasSanGenaro.muestra_escenarios;  -- 330
